@@ -50,7 +50,6 @@ const agregarAlCarrito = (idProducto) => {
         const producto = carrito.map (producto => {
             if (producto.id === idProducto){
                 producto.cantidad++
-                producto.precio = carrito.reduce((acc, producto) => acc + producto.precio, producto.precio);
             }
         })
     } else {
@@ -81,6 +80,6 @@ const actualizarCarrito = () => {
         `
         contenedorCarrito.appendChild(div);
     })
-    contadorCarrito.innerText = carrito.length;
-    precioTotal.innerText = carrito.reduce((acc, producto) => acc + producto.precio, 0);
+    contadorCarrito.innerText = carrito.reduce((acc, producto) => acc + producto.cantidad, 0);
+    precioTotal.innerText = carrito.reduce((acc, producto) => acc + (producto.precio*producto.cantidad), 0);
 }
