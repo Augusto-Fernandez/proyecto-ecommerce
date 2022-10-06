@@ -8,24 +8,18 @@ const contadorCarrito = document.getElementById("contador-carrito");
 
 const precioTotal = document.getElementById("precio-total");
 
-const confirmarCompra = document.getElementById("confirmar-compra");
-
 let carrito = [];
+
+document.addEventListener("DOMContentLoaded", () =>{
+    if(localStorage.getItem("carrito")){
+        carrito = JSON.parse(localStorage.getItem("carrito"));
+        actualizarCarrito();
+    }
+})
 
 botonVaciar.addEventListener("click", () => {
     carrito.length = 0;
     actualizarCarrito ();
-})
-
-confirmarCompra.addEventListener("click", () => {
-    alert("Por favor presione ENTER para confirmar su compra")
-    document.addEventListener("keydown", e => {
-        if(e.key===13){
-            alert("Se confirmó la compra");
-        } else {
-            alert("No se presionó ENTER");
-        }
-    })
 })
 
 productos.forEach(producto => {
@@ -76,9 +70,11 @@ const actualizarCarrito = () => {
                         <p>${producto.nombre}</p>
                         <p>Precio: ${producto.precio}</p>
                         <p>Cantidad <span id="cantidad">${producto.cantidad}</span></p>
-                        <button onclick="elminarDelCarrito(${producto.id})"</button>
+                        <button onclick="elminarDelCarrito(${producto.id})">Eliminar</button>
         `
         contenedorCarrito.appendChild(div);
+
+        localStorage.setItem("carrito", JSON.stringify(carrito));
     })
     contadorCarrito.innerText = carrito.reduce((acc, producto) => acc + producto.cantidad, 0);
     precioTotal.innerText = carrito.reduce((acc, producto) => acc + (producto.precio*producto.cantidad), 0);
