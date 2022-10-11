@@ -1,81 +1,30 @@
-const contenedorProductos = document.getElementById("contenedor-productos");
+import { validarProductoRepetido } from "./src/accionesCarrito.js";
+import { productos } from './src/stock.js';
 
-const contenedorCarrito = document.getElementById("contenedor-carrito");
+const mostrarProductos = () => {
+  const contenedorProductos = document.getElementById("producto-contenedor");
 
-const botonVaciar = document.getElementById("vaciar-carrito");
-
-const contadorCarrito = document.getElementById("contador-carrito");
-
-const precioTotal = document.getElementById("precio-total");
-
-let carrito = [];
-
-document.addEventListener("DOMContentLoaded", () =>{
-    if(localStorage.getItem("carrito")){
-        carrito = JSON.parse(localStorage.getItem("carrito"));
-        actualizarCarrito();
-    }
-})
-
-botonVaciar.addEventListener("click", () => {
-    carrito.length = 0;
-    actualizarCarrito ();
-})
-
-productos.forEach(producto => {
-    const div = document.createElement("div");
-    div.classList.add("producto");
-    div.innerHTML = `
-                    <h3>${producto.nombre}</h3>
-                    <p>Precio: $${producto.precio}</p>
-                    <button id="boton${producto.id}">Comprar</button>
-                    `;
+  productos.forEach(producto => {
+    const div = document.createElement('div');
+    div.classList.add('card');
+    div.innerHTML += `<div class="card-image">
+                        <img src=${producto.img}>
+                        <span class="card-title">${producto.nombre}</span>
+                        <a class="btn-floating halfway-fab wabes-effect waves-light red" id=boton${producto.id}><i class="material-icons">add_shopping_cart</i></a>
+                      </div>
+                      <div class="card-content">
+                          <p>${producto.desc}</p>
+                          <p>Talle: ${producto.talle}</p>
+                          <p>${producto.precio}</p>
+                      </div>
+                     `
     contenedorProductos.appendChild(div);
 
     const boton = document.getElementById(`boton${producto.id}`);
-    boton.addEventListener("click", () => {
-        agregarAlCarrito(producto.id);
+    boton.addEventListener('click', () => {
+      validarProductoRepetido(producto.id);
     })
-})
+  });
+};
 
-const agregarAlCarrito = (idProducto) => {
-    const seRepite = carrito.some(producto => producto.id === idProducto);
-    if (seRepite){
-        const producto = carrito.map (producto => {
-            if (producto.id === idProducto){
-                producto.cantidad++
-            }
-        })
-    } else {
-        const item = productos.find((producto) => producto.id === idProducto);
-        carrito.push(item);
-    }
-    actualizarCarrito();
-}
-
-const elminarDelCarrito = (idProducto) => {
-    const item = carrito.find((producto) => producto.id === idProducto);
-    const indice = carrito.indexOf(item);
-    carrito.splice(indice, 1);
-    actualizarCarrito();
-}
-
-const actualizarCarrito = () => {
-    contenedorCarrito.innerHTML = " ";
-
-    carrito.forEach((producto) => {
-        const div = document.createElement("div");
-        div.className = ("producto-en-carrito");
-        div.innerHTML = `
-                        <p>${producto.nombre}</p>
-                        <p>Precio: ${producto.precio}</p>
-                        <p>Cantidad <span id="cantidad">${producto.cantidad}</span></p>
-                        <button onclick="elminarDelCarrito(${producto.id})">Eliminar</button>
-        `
-        contenedorCarrito.appendChild(div);
-
-        localStorage.setItem("carrito", JSON.stringify(carrito));
-    })
-    contadorCarrito.innerText = carrito.reduce((acc, producto) => acc + producto.cantidad, 0);
-    precioTotal.innerText = carrito.reduce((acc, producto) => acc + (producto.precio*producto.cantidad), 0);
-}
+mostrarProductos();
