@@ -41,7 +41,7 @@ const agregarAlCarrito = (idProducto) => {
 const pintarCarrito = (carrito) => {
     const contenedorCarrito = document.getElementById("contenedor-carrito");
 
-    contenedor.innerHTML = '';
+    contenedorCarrito.innerHTML = '';
 
     carrito.forEach(producto => {
         const div = document.createElement('div');
