@@ -18,7 +18,7 @@ const validarProductoRepetido = (idProducto) => {
         cantidadProducto.innerText = `cantidad: ${seRepite.cantidad}`;
         actualizarCarrito(carrito);
     } else {
-        agregarAlCarrito(productoId);
+        agregarAlCarrito(idProducto);
     }
 };
 
