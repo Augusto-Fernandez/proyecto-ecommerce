@@ -1,30 +1,30 @@
-import { actualizarTotalesCarrito } from './actualizarCarrito.js';
-import { productos } from './stock.js';
-import { obtenerCarritoStorage } from './storage.js';
+import {actualizarCarrito} from './actualizarCarrito.js';
+import {productos} from './stock.js';
+import {obtenerCarritoStorage} from './storage.js';
 
 let carrito = [];
 
-const validarProductoRepetido = (productoId) => {
+const validarProductoRepetido = (idProducto) => {
 
     if (localStorage.getItem('carrito')) {
         carrito = obtenerCarritoStorage();
     }
 
-    const productoRepetido = carrito.find(producto => producto.id === productoId);
+    const seRepite = carrito.find(producto => producto.id === idProducto);
 
-    if (productoRepetido) {
-        productoRepetido.cantidad++;
-        const cantidadProducto = document.getElementById(`cantidad${productoRepetido.id}`);
-        cantidadProducto.innerText = `cantidad: ${productoRepetido.cantidad}`;
-        actualizarTotalesCarrito(carrito);
+    if (seRepite) {
+        seRepite.cantidad++;
+        const cantidadProducto = document.getElementById(`cantidad${seRepite.id}`);
+        cantidadProducto.innerText = `cantidad: ${seRepite.cantidad}`;
+        actualizarCarrito(carrito);
     } else {
         agregarAlCarrito(productoId);
     }
 };
 
-const agregarAlCarrito = (productoId) => {
-    const contenedor = document.getElementById('carrito-contenedor');
-    const producto = productos.find(producto => producto.id === productoId);
+const agregarAlCarrito = (idProducto) => {
+    const contenedorCarrito = document.getElementById("contenedor-carrito");
+    const producto = productos.find(producto => producto.id === idProducto);
     carrito.push(producto);
 
     const div = document.createElement('div');
@@ -34,13 +34,12 @@ const agregarAlCarrito = (productoId) => {
                     <p id=cantidad${producto.id}>Cantidad: ${producto.cantidad}</p>
                     <button id=eliminar${producto.id} value='${producto.id}' class='btn waves-effect waves-ligth boton-eliminar'>X</button>
                     `;
-    contenedor.appendChild(div);
-    actualizarTotalesCarrito(carrito);
+    contenedorCarrito.appendChild(div);
+    actualizarCarrito(carrito);
 };
 
-// pintarCarrito recibe por parámetro un array de objetos
 const pintarCarrito = (carrito) => {
-    const contenedor = document.getElementById('carrito-contenedor');
+    const contenedorCarrito = document.getElementById("contenedor-carrito");
 
     contenedor.innerHTML = '';
 
@@ -52,16 +51,16 @@ const pintarCarrito = (carrito) => {
                         <p id=cantidad${producto.id}>Cantidad: ${producto.cantidad}</p>
                         <button id=eliminar${producto.id} value='${producto.id}' class='btn waves-effect waves-ligth boton-eliminar'>X</button>
                         `;
-        contenedor.appendChild(div);
+        contenedorCarrito.appendChild(div);
     });
 };
 
-const eliminarProductoCarrito = (productoId) => {
+const eliminarDelCarrito = (idProducto) => {
     const carritoStorage = obtenerCarritoStorage();
-    const carritoActualizado = carritoStorage.filter(producto => producto.id != productoId);
+    const carritoActualizado = carritoStorage.filter(producto => producto.id != idProducto);
 
-    actualizarTotalesCarrito(carritoActualizado);
+    actualizarCarrito(carritoActualizado);
     pintarCarrito(carritoActualizado);
 };
 
-export { agregarAlCarrito, validarProductoRepetido, pintarCarrito, eliminarProductoCarrito };
+export {agregarAlCarrito, validarProductoRepetido, pintarCarrito, eliminarDelCarrito};

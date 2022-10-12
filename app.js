@@ -1,4 +1,4 @@
-import { validarProductoRepetido } from "./src/accionesCarrito.js";
+import {validarProductoRepetido} from "./src/accionesCarrito.js";
 
 const mostrarProductos = (productos) => {
   const contenedorProductos = document.getElementById("producto-contenedor");
@@ -26,4 +26,4 @@ const mostrarProductos = (productos) => {
   });
 };
 
-export { mostrarProductos };
+export {mostrarProductos};

@@ -7,4 +7,4 @@ const obtenerCarritoStorage = () => {
     return carritoStorage;
 };
 
-export { guardarCarritoStorage, obtenerCarritoStorage };
+export {guardarCarritoStorage, obtenerCarritoStorage};
