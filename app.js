@@ -1,4 +1,4 @@
-import {validarProductoRepetido} from "./src/accionesCarrito.js";
+import {validarProductoRepetido} from "./src/carrito.js";
 
 const mostrarProductos = (productos) => {
   const contenedorProductos = document.getElementById("producto-contenedor");

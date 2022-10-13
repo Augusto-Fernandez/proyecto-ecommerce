@@ -1,4 +1,4 @@
-import { eliminarDelCarrito } from "./accionesCarrito.js";
+import { eliminarDelCarrito } from "./carrito.js";
 
 const modalContenedor = document.querySelector('.modal-contenedor');
 const abrirCarrito = document.getElementById('boton-carrito');
