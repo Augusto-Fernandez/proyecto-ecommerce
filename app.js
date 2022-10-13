@@ -1,4 +1,5 @@
 import {validarProductoRepetido} from "./src/carrito.js";
+// import "toastify-js/src/toastify.css";
 
 const mostrarProductos = (productos) => {
   const contenedorProductos = document.getElementById("producto-contenedor");
@@ -24,6 +25,11 @@ const mostrarProductos = (productos) => {
     const boton = document.getElementById(`boton${producto.id}`);
     boton.addEventListener('click', () => {
       validarProductoRepetido(producto.id);
+      /*Toastify({
+        text: "Se agregó ${producto.nombre} al Carrito",
+        duration: 3000
+      }).showToast();
+      */
     })
   });
 };
