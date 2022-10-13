@@ -4,7 +4,7 @@ const productos =
         id: 1,
         nombre: "Guitarra Ibanez",
         tipo: "guitarra",
-        desc: "RG GIO GRX40 de álamo black night con diapasón de jatoba",
+        desc: "RG GIO GRX40 de álamo black night",
         precio: 67590,
         cuerdas: "6",
         img: 'public/images/guitarra-ibanez.jpg',

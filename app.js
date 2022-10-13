@@ -13,10 +13,10 @@ const mostrarProductos = (productos) => {
                       <div class="card-content">
                           <p>${producto.desc}</p>
                           <p>Cuerdas: ${producto.cuerdas}</p>
-                          <p>${producto.precio}</p>
+                          <p>$${producto.precio}</p>
                       </div>
-                      <div>
-                        <a class="btn-floating light blue waves-effect waves-light" id=boton${producto.id}><i class="material-icons">add_shopping_cart</i></a>
+                      <div class="center-align">
+                        <a class="btn light blue waves-effect waves-light container" id=boton${producto.id}>Comprar</a>
                       </div>
                      `
     contenedorProductos.appendChild(div);
