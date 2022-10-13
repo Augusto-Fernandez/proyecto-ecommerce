@@ -2,67 +2,67 @@ const productos =
 [
     {
         id: 1,
-        nombre: "Buzo 1",
-        tipo: "buzo",
-        desc: "Un buzo que re va con vos",
-        precio: 1200,
-        talle: "L",
-        img: 'public/images/buzo.jpg',
+        nombre: "Guitarra Ibanez",
+        tipo: "guitarra",
+        desc: "RG GIO GRX40 de álamo black night con diapasón de jatoba",
+        precio: 67590,
+        cuerdas: "6",
+        img: 'public/images/guitarra-ibanez.jpg',
         cantidad:1
     },
 
     {
         id: 2,
-        nombre: "Remera 1",
-        tipo: "remera",
-        desc: "Una remera que re va con vos",
-        precio: 500,
-        talle: "L",
-        img: 'public/images/remera.jpg',
+        nombre: "Bajo Ibanez",
+        tipo: "bajo",
+        desc: "4 Cuerdas Atk200nt Madera Natural",
+        precio: 188800,
+        cuerdas: "4",
+        img: 'public/images/bajo-ibanez.jpg',
         cantidad:1
     },
 
     {
         id: 3,
-        nombre: "Camisa 1",
-        tipo: "camisa",
-        desc: "Una camisa que re va con vos",
-        precio: 900,
-        talle: "S",
-        img: 'public/images/camisa.jpg',
+        nombre: "Guitarra Epiphone",
+        tipo: "guitarra",
+        desc: "Les Paul Special VE de álamo vintage sunburst",
+        precio: 78408,
+        cuerdas: "6",
+        img: 'public/images/guitarra-epiphone.jpg',
         cantidad:1
     },
 
     {
         id: 4,
-        nombre: "Pantalon 1",
-        tipo: "pantalon",
-        desc: "Una pantalon que re va con vos",
-        precio: 1600,
-        talle: "L",
-        img: 'public/images/pantalon.jpg',
+        nombre: "Bajo Schecter",
+        tipo: "bajo",
+        desc: "Diamond J Bass Blk",
+        precio: 274835,
+        cuerdas: "4",
+        img: 'public/images/bajo-schecter.jpg',
         cantidad:1
     },
 
     {
         id: 5,
-        nombre: "Buzo 2",
-        tipo: "buzo",
-        desc: "Un buzo que re va con vos",
-        precio: 1200,
-        talle: "L",
-        img: 'public/images/buzo.jpg',
+        nombre: "Guitarra Squier",
+        tipo: "guitarra",
+        desc: "Telecaster Affinity Series Hh",
+        precio: 164230,
+        cuerdas: "6",
+        img: 'public/images/guitarra-squier.jpg',
         cantidad:1
     },
 
     {
         id: 6,
-        nombre: "Remera 2",
-        tipo: "remera",
-        desc: "Una remera que re va con vos",
-        precio: 500,
-        talle: "L",
-        img: 'public/images/remera.jpg',
+        nombre: "Bajo Squier",
+        tipo: "bajo",
+        desc: "Deluxe Jazz Bass Iv Active",
+        precio: 268698,
+        cuerdas: "6",
+        img: 'public/images/bajo-squier.jpg',
         cantidad:1
     }
 ];

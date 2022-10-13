@@ -9,12 +9,14 @@ const mostrarProductos = (productos) => {
     div.innerHTML += `<div class="card-image">
                         <img src=${producto.img}>
                         <span class="card-title">${producto.nombre}</span>
-                        <a class="btn-floating light blue waves-effect waves-light" id=boton${producto.id}><i class="material-icons">add_shopping_cart</i></a>
                       </div>
                       <div class="card-content">
                           <p>${producto.desc}</p>
-                          <p>Talle: ${producto.talle}</p>
+                          <p>Cuerdas: ${producto.cuerdas}</p>
                           <p>${producto.precio}</p>
+                      </div>
+                      <div>
+                        <a class="btn-floating light blue waves-effect waves-light" id=boton${producto.id}><i class="material-icons">add_shopping_cart</i></a>
                       </div>
                      `
     contenedorProductos.appendChild(div);
