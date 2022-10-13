@@ -25,30 +25,30 @@ header {
 }
 
 h1 {
-  color: rgb(225, 76, 65);
+  color: rgb(110, 200, 230);
   text-transform: uppercase;
   font-weight: 500px;
   font-size: 30px;
   margin: 0;
 }
 
-#cesta-carrito {
+#boton-carrito {
   border: none;
-  color: rgb(225, 76, 65);
+  color: rgb(110, 200, 230);
   font-size: 30px;
   background-color: white;
-  border-radius: 50%;
+  border-radius: 8%;
   padding: 10px 20px;
   transition: all .3s;
 }
 
-#cesta-carrito:hover {
+#boton-carrito:hover {
   cursor: pointer;
   color: white;
-  background-color: rgb(225, 76, 65);
+  background-color: rgb(110, 200, 230);
 }
 
-#cesta-carrito:focus {
+#boton-carrito:focus {
   outline: none;
 }
 
@@ -115,7 +115,7 @@ select {
 }
 
 .modal-carrito h3 {
-  color: rgb(225, 76, 65);
+  color: rgb(110, 200, 230);
   padding-bottom: 5px;
 }
 
@@ -124,7 +124,7 @@ select {
   top: 15px;
   right: 15px;
   font-size: 20px;
-  color: rgb(225, 76, 65) !important;
+  color: rgb(110, 200, 230) !important;
   border: none;
   background-color: white;
 }
@@ -142,7 +142,7 @@ select {
 }
 
 .card .card-image .card-title {
-  color: rgb(225, 76, 65);
+  color: rgb(110, 200, 230);
   position: unset
 }
 

@@ -1,7 +1,7 @@
 import { eliminarDelCarrito } from "./accionesCarrito.js";
 
 const modalContenedor = document.querySelector('.modal-contenedor');
-const abrirCarrito = document.getElementById('cesta-carrito');
+const abrirCarrito = document.getElementById('boton-carrito');
 const cerrarCarrito = document.getElementById('btn-cerrar-carrito');
 const modalCarrito = document.querySelector('.modal-carrito');
 
