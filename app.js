@@ -27,9 +27,10 @@ const mostrarProductos = (productos) => {
     })
     boton.addEventListener('click', () =>{
       Toastify({
-        text: "Se agrego "+producto.nombre+" producto",
+        text: "Se agregó "+producto.nombre+" al carrito",
         duration: 3000,
-        gravity: "bottom"
+        gravity: "bottom",
+        className: "alerta-toastify"
       }).showToast();
     })
   });
