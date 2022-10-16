@@ -1,5 +1,5 @@
 import {validarProductoRepetido} from "./src/carrito.js";
-// import "toastify-js/src/toastify.css";
+// import Toastify from 'toastify-js'
 
 const mostrarProductos = (productos) => {
   const contenedorProductos = document.getElementById("producto-contenedor");
