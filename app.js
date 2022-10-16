@@ -27,8 +27,9 @@ const mostrarProductos = (productos) => {
     })
     boton.addEventListener('click', () =>{
       Toastify({
-        text: "Se agrego producto",
-        duration: 3000
+        text: "Se agrego "+producto.nombre+" producto",
+        duration: 3000,
+        gravity: "bottom"
       }).showToast();
     })
   });
