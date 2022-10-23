@@ -1,6 +1,6 @@
 import {actualizarCarrito} from './actualizarCarrito.js';
 import {obtenerCarritoStorage} from './storage.js';
-import {obtenerProductos} from "./src/obtenerProductos.js";
+import {obtenerProductos} from "./obtenerProductos.js";
 
 let carrito = [];
 
