@@ -3,7 +3,7 @@ import {obtenerProductos} from "./src/obtenerProductos.js";
 
 const mostrarProductos = async () => { /*12) anteriormente estaba importado productos del stock.js (2)*/
   const contenedorProductos = document.getElementById("producto-contenedor");
-  const productos = await obtenerProductos();
+  const productos = await obtenerProductos(); /*22) trae los productos de stock.json (3)*/
 
   productos.forEach(producto => { /* 1)Muestra los productos en la página (1)*/
     const div = document.createElement('div');
