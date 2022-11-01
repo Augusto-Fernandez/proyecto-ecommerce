@@ -1,5 +1,5 @@
 import {mostrarProductos} from "./App.js";
-import {pintarCarrito} from "./src/carrito.js";
+import {confirmarCompra, pintarCarrito} from "./src/carrito.js";
 import {actualizarCarrito} from "./src/actualizarCarrito.js";
 import {obtenerCarritoStorage} from "./src/storage.js";
 
@@ -11,5 +11,6 @@ document.addEventListener('DOMContentLoaded', () => { /*11)Hace que primero se c
         const carrito = obtenerCarritoStorage();/*13) almacena en la constante lo que hay en el local storage (2)*/
         pintarCarrito(carrito); /*14) pinta los productos en el carrito. Por lo que entendí se hace así porque agregarAlCarrito los pinta una vez que se presiona el boton, en cambio pintarCarrito los pinta apenas se carga la página  (2)*/
         actualizarCarrito(carrito); /*8) Calcula los valores totales y la cantidad de productos. Tiene dentro a la función pintarTotalesCarrito que modifica el DOM en precio-total y contador-carrito (1)*/
+        confirmarCompra(carrito);
     };
 });

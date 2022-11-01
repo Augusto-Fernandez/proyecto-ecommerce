@@ -66,4 +66,21 @@ const eliminarDelCarrito = (idProducto) => { /*19) Recive le id del producto a e
     pintarCarrito(carritoActualizado);
 };
 
-export {agregarAlCarrito, validarProductoRepetido, pintarCarrito, eliminarDelCarrito};
+const confirmarCompra = async () => {
+    const botonCompra = document.getElementById("confirmar-compra");
+    const productos = await obtenerProductos();
+    const producto = productos.some((producto)=>producto.cantidad>0);
+
+    
+
+    botonCompra.addEventListener('click', () =>{
+        if(producto){
+            alert('hay productos en el carrito')
+        }else{
+            alert('No hay productos en el carrito')
+        }
+    })
+
+}
+
+export {agregarAlCarrito, validarProductoRepetido, pintarCarrito, eliminarDelCarrito, confirmarCompra};
