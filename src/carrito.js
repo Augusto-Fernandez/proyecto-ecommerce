@@ -73,10 +73,10 @@ const confirmarCompra = () => {
     }
     
     botonCompra.addEventListener('click', () =>{
-        if(carrito.length==0){
-            alert('No hay productos en el carrito')
+        if(carrito.length>0){
+            alert('Hay productos en el carrito')
         }else{
-            alert('hay productos en el carrito')
+            alert('No hay productos en el carrito')
         }
     })
 
