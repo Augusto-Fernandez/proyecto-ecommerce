@@ -66,18 +66,17 @@ const eliminarDelCarrito = (idProducto) => { /*19) Recive le id del producto a e
     pintarCarrito(carritoActualizado);
 };
 
-const confirmarCompra = async () => {
+const confirmarCompra = () => {
     const botonCompra = document.getElementById("confirmar-compra");
-    const productos = await obtenerProductos();
+    if (localStorage.getItem('carrito')) { 
+        carrito = obtenerCarritoStorage();
+    }
     
-
-    
-
     botonCompra.addEventListener('click', () =>{
-        if(productos.length>0){
-            alert('hay productos en el carrito')
-        }else{
+        if(carrito.length==0){
             alert('No hay productos en el carrito')
+        }else{
+            alert('hay productos en el carrito')
         }
     })
 
