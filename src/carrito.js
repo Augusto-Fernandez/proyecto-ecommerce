@@ -76,7 +76,10 @@ const confirmarCompra = () => {
         if(carrito.length>0){
             alert('Hay productos en el carrito')
         }else{
-            alert('No hay productos en el carrito')
+            Swal.fire({
+                icon: 'error',
+                title: 'No hay productos en el carrito',
+              })
         }
     })
 
