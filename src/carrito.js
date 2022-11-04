@@ -68,11 +68,11 @@ const eliminarDelCarrito = (idProducto) => { /*19) Recive le id del producto a e
 
 const confirmarCompra = () => {
     const botonCompra = document.getElementById("confirmar-compra");
-    if (localStorage.getItem('carrito')) { 
-        carrito = obtenerCarritoStorage();
-    }
     
     botonCompra.addEventListener('click', () =>{
+        if (localStorage.getItem('carrito')) { 
+            carrito = obtenerCarritoStorage();
+        }
         if(carrito.length>0){
             alert('Hay productos en el carrito')
         }else{
