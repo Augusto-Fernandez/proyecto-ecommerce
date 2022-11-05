@@ -74,7 +74,7 @@ const confirmarCompra = () => {
             carrito = obtenerCarritoStorage();
         }
         if(carrito.length>0){
-            alert('Hay productos en el carrito')
+            redireccionFormulario();
         }else{
             Swal.fire({
                 icon: 'error',
@@ -83,6 +83,10 @@ const confirmarCompra = () => {
         }
     })
 
+}
+
+const redireccionFormulario = () =>{
+    location.href = "./form/formulario.html";
 }
 
 export {agregarAlCarrito, validarProductoRepetido, pintarCarrito, eliminarDelCarrito, confirmarCompra};
