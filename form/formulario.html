@@ -1,12 +1,84 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Tienda Online</title>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+        <link href="//cdn.jsdelivr.net/npm/@sweetalert2/theme-minimal@4/minimal.css" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link rel="stylesheet" href="../public/css/styles.css">
+      </head>
 <body>
-    
+    <header>
+        <h1>Tienda Online</h1>
+    </header>
+    <main>
+        <form>
+            <h2 class="fuente_formulario">Método de pago</h2>
+            <div class="formulario_selector_tarjeta">
+                <label><span>Selecciona un metodo de pago</span></label>
+                <select>
+                    <option>Visa</option>
+                    <option>MasterCard</option>
+                </select>
+            </div>
+            <div class="formulario_tarjeta">
+                <section class="formulario_numero_tarjeta">
+                    <label><span>Número de tarjeta</span></label>
+                    <input>
+                </section>
+                <section class="formulario_fecha_caducidad">
+                    <div>
+                        <label><span>Fecha de caducidad</span></label>
+                        <div class="formulario_fecha_caducidad_input">
+                            <input>
+                            <input>
+                        </div>
+                    </div>
+                    <div class="formulario_codigo_seguridad">
+                        <label><span>Código de seguridad</span></label>
+                        <input>
+                    </div>
+                </section>   
+            </div>
+            <h3 class="fuente_formulario">Información de facturación</h3>
+            <div class="formulario_facturacion">
+                <label><span>Nombre</span></label>
+                <input>
+                <label><span>Apellido</span></label>
+                <input>
+                <label><span>Localidad</span></label>
+                <input>
+                <label><span>Dirección de facturación</span></label>
+                <input>
+                <label><span>Código postal</span></label>
+                <input>
+            </div>
+            <div class="formulario_selector_tarjeta">
+                <label><span>País</span></label>
+                <select>
+                    <option>Argentina</option>
+                    <option>Brasil</option>
+                    <option>Chile</option>
+                    <option>Uruguay</option>
+                    <option>Paraguay</option>
+                </select>
+            </div>
+            <div class="formulario_facturacion">
+                <label><span>Teléfono</span></label>
+                <input>
+            </div>
+            <div class="formulario_padding_boton">
+                <button class="btn light blue waves-effect waves-light container">Enviar</button>
+            </div>
+        </form>
+    </main>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.js"></script>
+    <script src="https://kit.fontawesome.com/df59baf6b8.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/luxon@2.3.0/build/global/luxon.min.js"></script>
 </body>
 </html>
