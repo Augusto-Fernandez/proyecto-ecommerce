@@ -54,16 +54,14 @@ formulario.addEventListener('submit', (e) => {
     }
 
     /* Error Localidad */
-    /* tengo que hacer que excluya caracteres */
-    if(localidad.value === '' || localidad.value == null){
+    if(localidad.value === '' || localidad.value == null || !localidad.value.match(/^[A-Za-z][0-9]/)){
         const errorLocalidad = document.getElementById("error-localidad");
         errorLocalidad.innerHTML="Este campo es obligatorio"
         errores++
     }
 
     /* Error Dirección*/
-    /* tengo que hacer que excluya caracteres */
-    if(direccion.value === '' || direccion.value == null){
+    if(direccion.value === '' || direccion.value == null || !direccion.value.match(/^[A-Za-z][0-9]/)){
         const errorDireccion = document.getElementById("error-direccion");
         errorDireccion.innerHTML="Este campo es obligatorio"
         errores++
