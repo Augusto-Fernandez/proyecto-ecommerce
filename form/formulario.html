@@ -17,66 +17,110 @@
         <h1>Tienda Online</h1>
     </header>
     <main>
-        <form>
+        <form id="formulario">
             <h2 class="fuente_formulario">Método de pago</h2>
             <div class="formulario_selector_tarjeta">
                 <label><span>Selecciona un metodo de pago</span></label>
                 <select>
-                    <option>Visa</option>
-                    <option>MasterCard</option>
+                    <option value="visa" name="visa">Visa</option>
+                    <option value="visa" name="visa">MasterCard</option>
                 </select>
             </div>
             <div class="formulario_tarjeta">
                 <section class="formulario_numero_tarjeta">
                     <label><span>Número de tarjeta</span></label>
-                    <input>
+                    <input id="numero-tarjeta">
+                    <span id="error-numero-tarjeta" class="formulario_error"></span>
                 </section>
                 <section class="formulario_fecha_caducidad">
                     <div>
                         <label><span>Fecha de caducidad</span></label>
                         <div class="formulario_fecha_caducidad_input">
-                            <input>
-                            <input>
+                            <select>
+                                <option value="1" name="1">1</option>
+                                <option value="2" name="2">2</option>
+                                <option value="3" name="3">3</option>
+                                <option value="4" name="4">4</option>
+                                <option value="5" name="5">5</option>
+                                <option value="6" name="6">6</option>
+                                <option value="7" name="7">7</option>
+                                <option value="8" name="8">8</option>
+                                <option value="9" name="9">9</option>
+                                <option value="10" name="10">10</option>
+                                <option value="11" name="11">11</option>
+                                <option value="12" name="12">12</option>
+                            </select>
+                            <select>
+                                <option value="2022" name="2022">2022</option>
+                                <option value="2023" name="2023">2023</option>
+                                <option value="2024" name="2024">2024</option>
+                                <option value="2025" name="2025">2025</option>
+                                <option value="2026" name="2026">2026</option>
+                                <option value="2027" name="2027">2027</option>
+                                <option value="2028" name="2028">2028</option>
+                                <option value="2029" name="2029">2029</option>
+                                <option value="2030" name="2030">2030</option>
+                            </select>
                         </div>
                     </div>
                     <div class="formulario_codigo_seguridad">
                         <label><span>Código de seguridad</span></label>
-                        <input>
+                        <input id="codigo">
+                        <span id="error-codigo" class="formulario_error"></span>
                     </div>
                 </section>   
             </div>
             <h3 class="fuente_formulario">Información de facturación</h3>
             <div class="formulario_facturacion">
-                <label><span>Nombre</span></label>
-                <input>
-                <label><span>Apellido</span></label>
-                <input>
-                <label><span>Localidad</span></label>
-                <input>
-                <label><span>Dirección de facturación</span></label>
-                <input>
-                <label><span>Código postal</span></label>
-                <input>
+                <div>
+                    <label><span>Nombre</span></label>
+                    <input type="text" id="nombre">
+                    <span id="error-nombre" class="formulario_error"></span>
+                </div>
+                <div>
+                    <label><span>Apellido</span></label>
+                    <input type="text" id="apellido">
+                    <span id="error-apellido" class="formulario_error"></span>
+                </div>
+                <div>
+                    <label><span>Localidad</span></label>
+                    <input id="localidad">
+                    <span id="error-localidad" class="formulario_error"></span>
+                </div>
+                <div>
+                    <label><span>Dirección de facturación</span></label>
+                    <input id="direccion">
+                    <span id="error-direccion" class="formulario_error"></span>
+                <div>
+                    <label><span>Código postal</span></label>
+                    <input id="codigo-postal">
+                    <span id="error-codigo-postal" class="formulario_error"></span>
+                </div>
             </div>
             <div class="formulario_selector_tarjeta">
                 <label><span>País</span></label>
                 <select>
-                    <option>Argentina</option>
-                    <option>Brasil</option>
-                    <option>Chile</option>
-                    <option>Uruguay</option>
-                    <option>Paraguay</option>
+                    <option value="Argentina" name="Argentina">Argentina</option>
+                    <option value="Brasil" name="Brasil">Brasil</option>
+                    <option value="Chile" name="Chile">Chile</option>
+                    <option value="Paraguay" name="Paraguay">Paraguay</option>
+                    <option value="Uruguay" name="Uruguay">Uruguay</option>
                 </select>
             </div>
             <div class="formulario_facturacion">
                 <label><span>Teléfono</span></label>
-                <input>
+                <input type="tel" id="telefono">
+                <span id="error-telefono" class="formulario_error"></span>
             </div>
             <div class="formulario_padding_boton">
-                <button class="btn light blue waves-effect waves-light container">Enviar</button>
+                <button id="submit" type="submit" class="btn light blue waves-effect waves-light container">Enviar</button>
+                <div>
+                    <span id="error-submit" class="formulario_error"></span>
+                </div>
             </div>
         </form>
     </main>
+    <script src="formulario.js"></script>
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.js"></script>
     <script src="https://kit.fontawesome.com/df59baf6b8.js" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/luxon@2.3.0/build/global/luxon.min.js"></script>
