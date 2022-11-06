@@ -69,7 +69,7 @@ formulario.addEventListener('submit', (e) => {
 
     /* Error Codigo postal */
     if(!codigoPostal.value.match(/^[0-9]{4}$/)){
-        const errorCodigoPostal = document.getElementById("error-codigo");
+        const errorCodigoPostal = document.getElementById("error-codigo-postal");
         errorCodigoPostal.innerHTML="Este campo debe contener 4 dígitos y solamente números"
         errores++
     }
