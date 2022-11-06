@@ -54,14 +54,14 @@ formulario.addEventListener('submit', (e) => {
     }
 
     /* Error Localidad */
-    if(localidad.value === '' || localidad.value == null || !localidad.value.match(/^[A-Za-z][0-9]/)){
+    if(localidad.value === '' || localidad.value == null || !localidad.value.match(/^[A-Za-z0-9]/)){
         const errorLocalidad = document.getElementById("error-localidad");
         errorLocalidad.innerHTML="Este campo es obligatorio"
         errores++
     }
 
     /* Error Dirección*/
-    if(direccion.value === '' || direccion.value == null || !direccion.value.match(/^[A-Za-z][0-9]/)){
+    if(direccion.value === '' || direccion.value == null || !direccion.value.match(/^[A-Za-z0-9]/)){
         const errorDireccion = document.getElementById("error-direccion");
         errorDireccion.innerHTML="Este campo es obligatorio"
         errores++
