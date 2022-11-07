@@ -1,11 +1,11 @@
 import {validarProductoRepetido} from "./src/carrito.js";
 import {obtenerProductos} from "./src/obtenerProductos.js";
 
-const mostrarProductos = async () => { /*12) anteriormente estaba importado productos del stock.js (2)*/
+const mostrarProductos = async () => { 
   const contenedorProductos = document.getElementById("producto-contenedor");
-  const productos = await obtenerProductos(); /*22) trae los productos de stock.json (3)*/
+  const productos = await obtenerProductos(); 
 
-  productos.forEach(producto => { /* 1)Muestra los productos en la página (1)*/
+  productos.forEach(producto => { 
     const div = document.createElement('div');
     div.classList.add('card');
     div.innerHTML += `<div class="card-image">
@@ -23,10 +23,9 @@ const mostrarProductos = async () => { /*12) anteriormente estaba importado prod
                      `
     contenedorProductos.appendChild(div);
 
-    const boton = document.getElementById(`boton${producto.id}`); /* 2) Crea el botón para comprar (1)*/
+    const boton = document.getElementById(`boton${producto.id}`); 
     boton.addEventListener('click', () => {
-      validarProductoRepetido(producto.id); /* 3) crea la funcion para validar si el producto esta repetido (1)*/
-      /*6) Esta función valida si se repite un producto y acutaliza su precio o lo agrega si no se encuentra (1)*/
+      validarProductoRepetido(producto.id); 
     })
     boton.addEventListener('click', () =>{
       Toastify({
