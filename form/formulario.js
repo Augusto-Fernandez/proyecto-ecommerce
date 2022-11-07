@@ -48,8 +48,8 @@ formulario.addEventListener('submit', (e) => {
 
     /* Error apellido */
     if(apellido.value === '' || apellido.value == null || !apellido.value.match(/^[A-Za-z]/)){
-        const errorNombre = document.getElementById("error-apellido");
-        errorNombre.innerHTML="Este campo es obligatorio"
+        const errorApellido = document.getElementById("error-apellido");
+        errorApellido.innerHTML="Este campo es obligatorio"
         errores++
     }
 
