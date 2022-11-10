@@ -87,4 +87,15 @@ const redireccionFormulario = () =>{
     location.href = "./form/formulario.html";
 }
 
-export {agregarAlCarrito, validarProductoRepetido, pintarCarrito, eliminarDelCarrito, confirmarCompra};
+const vaciarCarrito = () =>{
+    const botonVaciar = document.getElementById("vaciar-carrito");
+    botonVaciar.addEventListener('click', () =>{
+        const carritoStorage = obtenerCarritoStorage(); 
+        const carritoActualizado = carritoStorage.filter(producto => producto.length<1); 
+
+        actualizarCarrito(carritoActualizado);
+        pintarCarrito(carritoActualizado);
+    })
+}
+
+export {agregarAlCarrito, validarProductoRepetido, pintarCarrito, eliminarDelCarrito, confirmarCompra, vaciarCarrito};
