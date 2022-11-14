@@ -253,3 +253,7 @@ select {
 .formulario_error{
   color: red;
 }
+
+.boton_vaciar_carrito{
+  margin: 10px 0px;
+}
