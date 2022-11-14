@@ -64,5 +64,15 @@ formulario.addEventListener('submit', (e) => {
         const errorSubmit = document.getElementById("error-submit");
         errorSubmit.innerHTML="Por favor corrija el formulario";
     }
+    if(errores===0){
+        e.preventDefault();
+        Swal.fire({
+            icon: 'success',
+            title: 'La compra fue exitosa',
+            allowOutsideClick: false
+        }).then(function(){
+            location.href = "../index.html";
+        })
+    }
 })
 

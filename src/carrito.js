@@ -85,6 +85,11 @@ const confirmarCompra = () => {
 
 const redireccionFormulario = () =>{
     location.href = "./form/formulario.html";
+    const carritoStorage = obtenerCarritoStorage(); 
+    const carritoActualizado = carritoStorage.filter(producto => producto.length<1); 
+
+    actualizarCarrito(carritoActualizado);
+    pintarCarrito(carritoActualizado);
 }
 
 const vaciarCarrito = () =>{
