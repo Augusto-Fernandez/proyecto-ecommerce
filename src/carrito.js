@@ -24,9 +24,11 @@ const validarProductoRepetido = (idProducto) => {
 
 const agregarAlCarrito = async (idProducto) => { 
     const contenedorCarrito = document.getElementById("contenedor-carrito");
+    const carritoVacio = document.getElementById("validar-carrito");
     const productos = await obtenerProductos();
     const producto = productos.find(producto => producto.id === idProducto);
     carrito.push(producto);
+    carritoVacio.innerHTML='';
 
     const div = document.createElement('div');
     div.classList.add('productoEnCarrito');
@@ -42,7 +44,8 @@ const agregarAlCarrito = async (idProducto) => {
 const pintarCarrito = (carrito) => { 
     const contenedorCarrito = document.getElementById("contenedor-carrito");
 
-    contenedorCarrito.innerHTML = ''; 
+    contenedorCarrito.innerHTML = '';
+    validarCarrito(); 
 
     carrito.forEach(producto => {
         const div = document.createElement('div');
@@ -101,6 +104,16 @@ const vaciarCarrito = () =>{
         actualizarCarrito(carritoActualizado);
         pintarCarrito(carritoActualizado);
     })
+}
+
+const validarCarrito = () =>{
+    const carritoVacio = document.getElementById("validar-carrito");
+    if (localStorage.getItem('carrito')) { 
+        carrito = obtenerCarritoStorage();
+    }
+    if(carrito.length<1){
+        carritoVacio.innerText="No hay productos en el carrito"
+    }
 }
 
 export {agregarAlCarrito, validarProductoRepetido, pintarCarrito, eliminarDelCarrito, confirmarCompra, vaciarCarrito};
