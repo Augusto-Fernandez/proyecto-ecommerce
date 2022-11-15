@@ -9,8 +9,9 @@ const codigoPostal = document.getElementById("codigo-postal");
 const telefono = document.getElementById("telefono");
 const submit = document.getElementById("submit");
 
+/* Durante este evento se van a contralar que todos los input hayan recibido el parámetro solicitado*/
 formulario.addEventListener('submit', (e) => {
-    let errores = 0;
+    let errores = 0; /* Cada parámetro que sea vacio o incorrecto va a provocar que aumente el contador de errores. Mientras sea 0 se va poder efecutar la compra */
     
     if(!numeroTarjeta.value.match(/^[0-9]{16}$/)){
         const errorNumeroTarjeta = document.getElementById("error-numero-tarjeta");

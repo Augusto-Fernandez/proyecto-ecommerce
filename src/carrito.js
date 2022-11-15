@@ -4,8 +4,8 @@ import {obtenerProductos} from "./obtenerProductos.js";
 
 let carrito = [];
 
+/* Esta funcion revisa que haya valores en el storage y luego se valida si está repetido*/
 const validarProductoRepetido = (idProducto) => {
-
     if (localStorage.getItem('carrito')) { 
         carrito = obtenerCarritoStorage();
     }
@@ -22,6 +22,7 @@ const validarProductoRepetido = (idProducto) => {
     }
 };
 
+/* Esta funcion se encarga de agregar los productos en el carrito */
 const agregarAlCarrito = async (idProducto) => { 
     const contenedorCarrito = document.getElementById("contenedor-carrito");
     const carritoVacio = document.getElementById("validar-carrito");
@@ -41,6 +42,7 @@ const agregarAlCarrito = async (idProducto) => {
     actualizarCarrito(carrito); 
 };
 
+/* Esta funcion agrega los productos al carrito cuando se carga la pagina*/
 const pintarCarrito = (carrito) => { 
     const contenedorCarrito = document.getElementById("contenedor-carrito");
 
@@ -59,6 +61,7 @@ const pintarCarrito = (carrito) => {
     });
 };
 
+/* Esta funcion elimina producto de uno por vez haciendo un nuevo array con los productos que no fueron eliminados */
 const eliminarDelCarrito = (idProducto) => { 
     const carritoStorage = obtenerCarritoStorage(); 
     const carritoActualizado = carritoStorage.filter(producto => producto.id != idProducto); 
@@ -67,6 +70,7 @@ const eliminarDelCarrito = (idProducto) => {
     pintarCarrito(carritoActualizado);
 };
 
+/* Esta funcion redirige al formulario de compra en caso de que haya productos en el carrito, del caso contrario emite una alert informando que el carrito esta vacio */
 const confirmarCompra = () => {
     const botonCompra = document.getElementById("confirmar-compra");
     
@@ -86,6 +90,7 @@ const confirmarCompra = () => {
 
 }
 
+/* Esta funcion se ejecuta una vez que se valido que el hay productos en carrito para poder redirigir al formulario */
 const redireccionFormulario = () =>{
     location.href = "./form/formulario.html";
     const carritoStorage = obtenerCarritoStorage(); 
@@ -95,6 +100,7 @@ const redireccionFormulario = () =>{
     pintarCarrito(carritoActualizado);
 }
 
+/* Esta funcion borra todos los productos en el carrito */
 const vaciarCarrito = () =>{
     const botonVaciar = document.getElementById("vaciar-carrito");
     botonVaciar.addEventListener('click', () =>{
@@ -106,6 +112,7 @@ const vaciarCarrito = () =>{
     })
 }
 
+/* Esta funcion crea el mensaje de que no hay productos en el carrito en el caso de que este vacio */
 const validarCarrito = () =>{
     const carritoVacio = document.getElementById("validar-carrito");
     if (localStorage.getItem('carrito')) { 

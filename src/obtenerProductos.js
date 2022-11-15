@@ -1,3 +1,4 @@
+/* Esta funcion se encarga de obtener los productos en el archivo json */
 const obtenerProductos = async () =>{ 
     try { 
         const response = await fetch('src/data/stock.json'); 

@@ -19,7 +19,7 @@ modalContenedor.addEventListener('click', () => {
 
 modalCarrito.addEventListener('click', (e) => { 
     e.stopPropagation(); 
-
+    /* Accede al objeto evento que tenga la clase boton-eleminar que le dió con la función agregarAlCarrito o pintarCarrito  */
     if (e.target.classList.contains('boton-eliminar')) { 
         eliminarDelCarrito(e.target.value) 
     };
